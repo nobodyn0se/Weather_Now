@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './widgets/main_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,16 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
-    );
-  }
-}
-
-class MainPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('MainPage'),
+      home: const MainPage(),
     );
   }
 }
