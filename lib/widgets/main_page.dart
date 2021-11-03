@@ -5,8 +5,19 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('MainPage'),
+    return Scaffold(
+      appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.lightbulb_rounded))
+        ],
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      extendBodyBehindAppBar: true,
+      body: const Center(
+        child: Text('MainPage'),
+      ),
     );
   }
 }
