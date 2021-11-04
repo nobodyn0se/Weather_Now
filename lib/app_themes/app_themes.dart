@@ -5,7 +5,7 @@ enum AppThemes {
   dark,
 }
 
-class AppThemeClass {
+class AppThemeData {
   //theme map
   static final themeData = {
     AppThemes.light: ThemeData(
