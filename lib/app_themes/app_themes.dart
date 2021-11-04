@@ -18,6 +18,8 @@ class AppThemeData {
         bodyText2: TextStyle(color: Colors.black),
         headline4: TextStyle(color: Colors.black),
       ),
+      appBarTheme:
+          const AppBarTheme(iconTheme: IconThemeData(color: Colors.black)),
       iconTheme: const IconThemeData(color: Colors.black),
     ),
     AppThemes.dark: ThemeData(
@@ -30,6 +32,8 @@ class AppThemeData {
         bodyText2: TextStyle(color: Colors.white),
         headline4: TextStyle(color: Colors.white),
       ),
+      appBarTheme:
+          const AppBarTheme(iconTheme: IconThemeData(color: Colors.white)),
       iconTheme: const IconThemeData(color: Colors.white),
     ),
   };
