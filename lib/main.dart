@@ -1,9 +1,8 @@
-import 'package:bloc_app/app_themes/app_themes.dart';
-import 'package:bloc_app/bloc/theme/theme_state.dart';
-import 'package:flutter/material.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:flutter/material.dart';
+
+import '../bloc/theme/theme_state.dart';
 import './bloc/theme/theme_bloc.dart';
 
 import './widgets/main_page.dart';
