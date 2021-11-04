@@ -1,16 +1,13 @@
 # bloc_app
 
-A new Flutter project.
+A simple Flutter app built using BLoC architecture.
 
-## Getting Started
+## Dynamic Theming
 
-This project is a starting point for a Flutter application.
+The user can toggle between dark and light themes by clicking the bulb icon at the top right of the screen.
 
-A few resources to get you started if this is your first Flutter project:
+Business logic has been separated completely from the presentation layer. ThemeToggled is the event generated on button click and sent to the Bloc which then toggles the state (theme in this case). Everything is layered so that logical aspects aren't exposed to the widgets. 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+state.themeData contains information regarding the current theme, which is passed to the theme: attribute of MaterialApp. Every click will toggle this state and switch the theme making it easier to not specify theme specific color attributes everywhere.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app will be updated to display the current weather of an input city shortly.
