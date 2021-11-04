@@ -16,7 +16,11 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         actions: <Widget>[
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.lightbulb_rounded))
+            onPressed: () {
+              BlocProvider.of<ThemeBloc>(context).add(ThemeToggled());
+            },
+            icon: const Icon(Icons.lightbulb_rounded),
+          )
         ],
         backgroundColor: Colors.transparent,
         elevation: 0,
