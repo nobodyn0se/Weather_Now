@@ -6,7 +6,7 @@ import './theme_event.dart';
 import './theme_state.dart';
 
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
-  ThemeBloc(ThemeState initialState)
+  ThemeBloc()
       : super(ThemeState(themeData: AppThemeData.themeData[AppThemes.dark]!)) {
     on<ThemeToggled>(_onThemeToggled);
   }
