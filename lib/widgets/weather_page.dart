@@ -73,6 +73,32 @@ class _WeatherPageState extends State<WeatherPage> {
                   Text('Humidity: ${weatherState.weather.humidity}%'),
                   Text(
                       'Air Pressure: ${weatherState.weather.airPressure!.toInt()} hPa'),
+                          Stack(
+                            alignment: Alignment.bottomCenter,
+                            children: <Widget>[
+                              Container(
+                                margin: const EdgeInsets.symmetric(vertical: 3),
+                                height: 250,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  border: Border.all(
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyText1!
+                                          .color!),
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.symmetric(vertical: 4),
+                                height:
+                                    weatherState.weather.humidity! * 0.01 * 250,
+                                width: 27,
+                                decoration:
+                                    BoxDecoration(color: Colors.lightBlue[100]),
+                              ),
+                            ],
+                          ),
                 ],
               ),
             );
