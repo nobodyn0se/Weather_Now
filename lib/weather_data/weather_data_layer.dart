@@ -1,6 +1,8 @@
-import 'dart:io';
+import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+
+import '../weather_model/weather_model.dart';
 
 class WeatherDataClient {
   static const String _mainURL = 'https://metaweather.com';
