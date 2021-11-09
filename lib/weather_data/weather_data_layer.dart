@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import '../weather_model/weather_model.dart';
 
 class WeatherDataClient {
-  static const String _mainURL = 'https://metaweather.com';
+  static const String _mainURL = 'https://www.metaweather.com';
   final http.Client httpClient;
 
   WeatherDataClient({required this.httpClient});
@@ -15,12 +15,11 @@ class WeatherDataClient {
     try {
       final locResponse = await httpClient.get(locURL);
       if (locResponse.statusCode == 200) {
-        final locResult = jsonDecode(locResponse.body) as List;
+        final locResult = jsonDecode(locResponse.body);
         return (locResult.first)['woeid'];
       }
     } catch (e) {
       print('Error occured in data_layer/getLocID: ${e.toString()}');
-      return -1;
     }
     return -1;
   }
