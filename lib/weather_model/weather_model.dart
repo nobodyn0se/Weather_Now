@@ -6,7 +6,7 @@ class WeatherModel {
   final double? windSpeed;
   final double? windDirection;
   final double? airPressure;
-  final double? humidity;
+  final int? humidity;
   final double? visibility;
 
   WeatherModel(
