@@ -33,8 +33,9 @@ class MainPage extends StatelessWidget {
             autocorrect: false,
             decoration: InputDecoration(
               hintText: 'Search cities',
-              hintStyle: Theme.of(context).textTheme.bodyText1,
+              hintStyle: TextStyle(color: Theme.of(context).primaryColor),
               border: const OutlineInputBorder(),
+              filled: true,
               fillColor: Theme.of(context).textTheme.bodyText1!.color,
             ),
           ),
