@@ -16,6 +16,12 @@ class WeatherPage extends StatefulWidget {
 class _WeatherPageState extends State<WeatherPage> {
   late String city;
   @override
+  void didChangeDependencies() {
+    city = ModalRoute.of(context)!.settings.arguments as String;
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
