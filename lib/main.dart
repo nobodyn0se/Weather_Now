@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
           create: (context) => ThemeBloc(),
         ),
         BlocProvider<WeatherBloc>(
+            lazy: false,
             create: (context) =>
                 WeatherBloc(weatherRepository: weatherRepository))
       ],
