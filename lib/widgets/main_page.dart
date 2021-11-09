@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import '../bloc/theme/theme_bloc.dart';
 import '../bloc/theme/theme_event.dart';
 
+import './weather_page.dart';
+
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
   static const String routeName = "/search_page";
@@ -51,7 +53,13 @@ class MainPage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              if (_searchTextController.text.isNotEmpty) {}
+              if (_searchTextController.text.isNotEmpty) {
+                Navigator.pushNamed(
+                  context,
+                  WeatherPage.routeName,
+                  arguments: _searchTextController.text,
+                );
+              }
             },
             child: const Text('Search'),
           ),
