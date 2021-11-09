@@ -22,4 +22,20 @@ class WeatherDataClient {
     }
     return -1;
   }
+
+  Future<WeatherModel> getWeatherData(int locID) async {
+    final weatherURL = Uri.parse('$_mainURL/api/location/$locID');
+    try {
+      final weatherResponse = await httpClient.get(weatherURL);
+      if (weatherResponse.statusCode == 200) {
+        final weatherResult = jsonDecode(weatherResponse.body);
+        return WeatherModel.fromJson(weatherResult);
+      }
+    } catch (e) {
+      print('Error occured in data_layer/getWeatherData: ${e.toString()}');
+    } finally {
+      httpClient.close();
+    }
+    return WeatherModel();
+  }
 }
