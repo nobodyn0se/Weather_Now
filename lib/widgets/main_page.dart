@@ -30,16 +30,19 @@ class MainPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           const Icon(Icons.brightness_4_rounded),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: TextField(
+              style: TextStyle(
+                color: Colors.black,
+              ),
               autocorrect: false,
               decoration: InputDecoration(
                 hintText: 'Search cities',
-                hintStyle: TextStyle(color: Theme.of(context).primaryColor),
-                border: const OutlineInputBorder(),
+                hintStyle: TextStyle(color: Colors.black),
+                border: OutlineInputBorder(),
                 filled: true,
-                fillColor: Theme.of(context).textTheme.bodyText1!.color,
+                fillColor: Colors.white,
               ),
             ),
           ),
