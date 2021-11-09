@@ -1,3 +1,4 @@
+import 'package:bloc_app/bloc/theme/theme_bloc.dart';
 import 'package:bloc_app/bloc/theme/theme_event.dart';
 import 'package:bloc_app/bloc/weather/weather_bloc.dart';
 import 'package:bloc_app/bloc/weather/weather_event.dart';
