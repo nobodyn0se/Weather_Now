@@ -7,6 +7,7 @@ import '../bloc/theme/theme_event.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
+  static const String routeName = "/search_page";
 
   @override
   Widget build(BuildContext context) {

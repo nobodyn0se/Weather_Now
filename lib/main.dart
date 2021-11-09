@@ -24,6 +24,10 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             theme: state.themeData,
             home: const MainPage(),
+            initialRoute: MainPage.routeName,
+            routes: {
+              MainPage.routeName: (context) => const MainPage(),
+            },
           );
         },
       ),
