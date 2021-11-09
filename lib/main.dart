@@ -13,21 +13,19 @@ import './repository/weather_repository.dart';
 import './weather_data/weather_data_layer.dart';
 
 import './widgets/main_page.dart';
+import './widgets/weather_page.dart';
 
 void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  MyApp({Key? key}) : super(key: key);
   final WeatherRepository weatherRepository = WeatherRepository(
     weatherDataClient: WeatherDataClient(
       httpClient: http.Client(),
     ),
   );
-  runApp(MyApp(
-    weatherRepository: weatherRepository,
-  ));
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key, required this.weatherRepository}) : super(key: key);
-  final WeatherRepository weatherRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +40,15 @@ class MyApp extends StatelessWidget {
                 WeatherBloc(weatherRepository: weatherRepository))
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
-        builder: (context, state) {
+        builder: (context, themeState) {
           return MaterialApp(
             title: 'Flutter Demo',
-            theme: state.themeData,
+            theme: themeState.themeData,
             home: MainPage(),
             initialRoute: MainPage.routeName,
             routes: {
               MainPage.routeName: (context) => MainPage(),
+              WeatherPage.routeName: (context) => const WeatherPage(),
             },
           );
         },
