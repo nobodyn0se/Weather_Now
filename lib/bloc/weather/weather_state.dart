@@ -24,6 +24,10 @@ class WeatherFetched extends WeatherState {
 }
 
 class WeatherException extends WeatherState {
+  final String errorMessage;
+
+  WeatherException({required this.errorMessage});
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [errorMessage];
 }
