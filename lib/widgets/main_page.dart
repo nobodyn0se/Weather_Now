@@ -27,6 +27,7 @@ class MainPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           const Icon(Icons.brightness_4_rounded),
           TextField(
