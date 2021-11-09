@@ -42,9 +42,7 @@ class _WeatherPageState extends State<WeatherPage> {
       body: Center(
         child: BlocBuilder<WeatherBloc, WeatherState>(
             builder: (context, weatherState) {
-          if (weatherState is WeatherNull) {
-            return const Text('No data to display');
-          } else if (weatherState is WeatherFetching) {
+          if (weatherState is WeatherFetching) {
             return const CircularProgressIndicator();
           } else if (weatherState is WeatherFetched &&
               weatherState.weather.currTemp != null) {
@@ -63,8 +61,10 @@ class _WeatherPageState extends State<WeatherPage> {
                     'Air Pressure: ${weatherState.weather.airPressure!.toInt()} hPa'),
               ],
             );
+          } else if (weatherState is WeatherException) {
+            return Text(weatherState.errorMessage);
           } else {
-            return const Text('Error while fetching weather');
+            return const Text('Nothing to display');
           }
         }),
       ),
