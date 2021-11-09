@@ -25,8 +25,20 @@ class MainPage extends StatelessWidget {
         elevation: 0,
       ),
       extendBodyBehindAppBar: true,
-      body: const Center(
-        child: Text('MainPage'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Icon(Icons.brightness_4_rounded),
+          TextField(
+            autocorrect: false,
+            decoration: InputDecoration(
+              hintText: 'Search cities',
+              hintStyle: Theme.of(context).textTheme.bodyText1,
+              border: const OutlineInputBorder(),
+              fillColor: Theme.of(context).textTheme.bodyText1!.color,
+            ),
+          ),
+        ],
       ),
     );
   }
