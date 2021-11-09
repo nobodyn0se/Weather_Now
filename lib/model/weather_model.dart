@@ -20,4 +20,17 @@ class WeatherModel {
       required this.windDirection,
       required this.windSpeed});
 
+  factory WeatherModel.fromJson(dynamic json) {
+    final initWeather = json['consolidated_weather'][0];
+    return WeatherModel(
+        airPressure: initWeather['air_pressure'],
+        currTemp: initWeather['the_temp'],
+        humidity: initWeather['humidity'],
+        maxTemp: initWeather['max_temp'],
+        minTemp: initWeather['min_temp'],
+        visibility: initWeather['visibility'],
+        weatherCondition: initWeather['weather_state_name'],
+        windDirection: initWeather['wind_direction'],
+        windSpeed: initWeather['wind_speed']);
+  }
 }
