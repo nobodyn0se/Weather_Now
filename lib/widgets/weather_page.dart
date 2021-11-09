@@ -18,6 +18,7 @@ class _WeatherPageState extends State<WeatherPage> {
   @override
   void didChangeDependencies() {
     city = ModalRoute.of(context)!.settings.arguments as String;
+    BlocProvider.of<WeatherBloc>(context).add(FetchWeather(city: city));
     super.didChangeDependencies();
   }
 
