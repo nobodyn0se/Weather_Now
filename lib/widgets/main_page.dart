@@ -38,6 +38,9 @@ class MainPage extends StatelessWidget {
               filled: true,
               fillColor: Theme.of(context).textTheme.bodyText1!.color,
             ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Search'),
           ),
         ],
       ),
