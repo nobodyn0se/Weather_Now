@@ -46,20 +46,35 @@ class _WeatherPageState extends State<WeatherPage> {
             return const CircularProgressIndicator();
           } else if (weatherState is WeatherFetched &&
               weatherState.weather.currTemp != null) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(city),
-                Text(
-                    'Current: ${weatherState.weather.currTemp!.toStringAsPrecision(3)} C'),
-                Text(
-                    'Low: ${weatherState.weather.minTemp!.toStringAsPrecision(3)} C'),
-                Text(
-                    'High: ${weatherState.weather.maxTemp!.toStringAsPrecision(3)} C'),
-                Text('Humidity: ${weatherState.weather.humidity}%'),
-                Text(
-                    'Air Pressure: ${weatherState.weather.airPressure!.toInt()} hPa'),
-              ],
+            return Container(
+              color: Colors.red,
+              width: 300,
+              height: 500,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: Card(
+                      color: Theme.of(context).primaryColor,
+                      child: Text(
+                        city,
+                        style: Theme.of(context).textTheme.headline4,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  Text(
+                      'Current: ${weatherState.weather.currTemp!.toStringAsPrecision(3)} C'),
+                  Text(
+                      'Low: ${weatherState.weather.minTemp!.toStringAsPrecision(3)} C'),
+                  Text(
+                      'High: ${weatherState.weather.maxTemp!.toStringAsPrecision(3)} C'),
+                  Text('Humidity: ${weatherState.weather.humidity}%'),
+                  Text(
+                      'Air Pressure: ${weatherState.weather.airPressure!.toInt()} hPa'),
+                ],
+              ),
             );
           } else if (weatherState is WeatherException) {
             return Text(weatherState.errorMessage);
