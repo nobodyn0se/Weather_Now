@@ -52,10 +52,15 @@ class _WeatherPageState extends State<WeatherPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(city),
-                Text('Current: ${weatherState.weather.currTemp}'),
-                Text('Low: ${weatherState.weather.minTemp}'),
-                Text('High: ${weatherState.weather.maxTemp}'),
-                Text('Humidity: ${weatherState.weather.humidity}%')
+                Text(
+                    'Current: ${weatherState.weather.currTemp!.toStringAsPrecision(3)} C'),
+                Text(
+                    'Low: ${weatherState.weather.minTemp!.toStringAsPrecision(3)} C'),
+                Text(
+                    'High: ${weatherState.weather.maxTemp!.toStringAsPrecision(3)} C'),
+                Text('Humidity: ${weatherState.weather.humidity}%'),
+                Text(
+                    'Air Pressure: ${weatherState.weather.airPressure!.toInt()} hPa'),
               ],
             );
           } else {
