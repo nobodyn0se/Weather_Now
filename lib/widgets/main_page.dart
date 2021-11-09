@@ -1,3 +1,4 @@
+import 'package:bloc_app/bloc/weather/weather_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
@@ -6,8 +7,9 @@ import '../bloc/theme/theme_bloc.dart';
 import '../bloc/theme/theme_event.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+  MainPage({Key? key}) : super(key: key);
   static const String routeName = "/search_page";
+  final TextEditingController _searchTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +32,15 @@ class MainPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           const Icon(Icons.brightness_4_rounded),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: TextField(
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
               ),
               autocorrect: false,
-              decoration: InputDecoration(
+              controller: _searchTextController,
+              decoration: const InputDecoration(
                 hintText: 'Search cities',
                 hintStyle: TextStyle(color: Colors.black),
                 border: OutlineInputBorder(),
@@ -47,7 +50,9 @@ class MainPage extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              if (_searchTextController.text.isNotEmpty) {}
+            },
             child: const Text('Search'),
           ),
         ],
