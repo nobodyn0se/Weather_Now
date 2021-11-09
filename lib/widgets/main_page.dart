@@ -30,15 +30,19 @@ class MainPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           const Icon(Icons.brightness_4_rounded),
-          TextField(
-            autocorrect: false,
-            decoration: InputDecoration(
-              hintText: 'Search cities',
-              hintStyle: TextStyle(color: Theme.of(context).primaryColor),
-              border: const OutlineInputBorder(),
-              filled: true,
-              fillColor: Theme.of(context).textTheme.bodyText1!.color,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: TextField(
+              autocorrect: false,
+              decoration: InputDecoration(
+                hintText: 'Search cities',
+                hintStyle: TextStyle(color: Theme.of(context).primaryColor),
+                border: const OutlineInputBorder(),
+                filled: true,
+                fillColor: Theme.of(context).textTheme.bodyText1!.color,
+              ),
             ),
+          ),
           ElevatedButton(
             onPressed: () {},
             child: const Text('Search'),
