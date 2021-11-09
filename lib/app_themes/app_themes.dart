@@ -23,8 +23,8 @@ class AppThemeData {
       iconTheme: const IconThemeData(color: Colors.black),
     ),
     AppThemes.dark: ThemeData(
-      primaryColor: Colors.black,
-      scaffoldBackgroundColor: Colors.grey[800],
+      primaryColor: Colors.grey[800],
+      scaffoldBackgroundColor: Colors.black,
       textTheme: const TextTheme(
         bodyText1: TextStyle(
           color: Colors.white,
