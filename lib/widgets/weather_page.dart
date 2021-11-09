@@ -47,7 +47,7 @@ class _WeatherPageState extends State<WeatherPage> {
           } else if (weatherState is WeatherFetched &&
               weatherState.weather.currTemp != null) {
             return Container(
-              color: Colors.red,
+              //color: Colors.red,
               width: 300,
               height: 500,
               child: Column(
@@ -56,7 +56,6 @@ class _WeatherPageState extends State<WeatherPage> {
                   SizedBox(
                     width: double.maxFinite,
                     child: Card(
-                      color: Theme.of(context).primaryColor,
                       child: Text(
                         city,
                         style: Theme.of(context).textTheme.headline4,
@@ -64,15 +63,30 @@ class _WeatherPageState extends State<WeatherPage> {
                       ),
                     ),
                   ),
-                  Text(
-                      'Current: ${weatherState.weather.currTemp!.toStringAsPrecision(3)} C'),
-                  Text(
-                      'Low: ${weatherState.weather.minTemp!.toStringAsPrecision(3)} C'),
-                  Text(
-                      'High: ${weatherState.weather.maxTemp!.toStringAsPrecision(3)} C'),
-                  Text('Humidity: ${weatherState.weather.humidity}%'),
-                  Text(
-                      'Air Pressure: ${weatherState.weather.airPressure!.toInt()} hPa'),
+                  IntrinsicHeight(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 2),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                      'Current: ${weatherState.weather.currTemp!.toStringAsPrecision(3)} C'),
+                                  Text(
+                                      'Low: ${weatherState.weather.minTemp!.toStringAsPrecision(3)} C'),
+                                  Text(
+                                      'High: ${weatherState.weather.maxTemp!.toStringAsPrecision(3)} C'),
+                                  Text(
+                                      'Humidity: ${weatherState.weather.humidity}%'),
+                                  Text(
+                                      'Air Pressure: ${weatherState.weather.airPressure!.toInt()} hPa'),
+                                ],
+                              ),
+                            ),
+                          ),
                           Stack(
                             alignment: Alignment.bottomCenter,
                             children: <Widget>[
@@ -99,6 +113,10 @@ class _WeatherPageState extends State<WeatherPage> {
                               ),
                             ],
                           ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             );
