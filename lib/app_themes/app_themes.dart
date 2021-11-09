@@ -17,6 +17,7 @@ class AppThemeData {
         ),
         bodyText2: TextStyle(color: Colors.black),
         headline4: TextStyle(color: Colors.black),
+        subtitle1: TextStyle(color: Colors.black),
       ),
       appBarTheme:
           const AppBarTheme(iconTheme: IconThemeData(color: Colors.black)),
@@ -31,6 +32,7 @@ class AppThemeData {
         ),
         bodyText2: TextStyle(color: Colors.white),
         headline4: TextStyle(color: Colors.white),
+        subtitle1: TextStyle(color: Colors.white), //for search input
       ),
       appBarTheme:
           const AppBarTheme(iconTheme: IconThemeData(color: Colors.white)),
