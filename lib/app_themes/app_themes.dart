@@ -10,7 +10,10 @@ class AppThemeData {
   static final themeData = {
     AppThemes.light: ThemeData(
       primaryColor: Colors.white,
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: Colors.grey[350],
+      cardTheme: const CardTheme(
+        color: Colors.white,
+      ),
       textTheme: const TextTheme(
         bodyText1: TextStyle(
           color: Colors.black,
@@ -26,6 +29,9 @@ class AppThemeData {
     AppThemes.dark: ThemeData(
       primaryColor: Colors.grey[800],
       scaffoldBackgroundColor: Colors.black,
+      cardTheme: CardTheme(
+        color: Colors.grey[800],
+      ),
       textTheme: const TextTheme(
         bodyText1: TextStyle(
           color: Colors.white,
