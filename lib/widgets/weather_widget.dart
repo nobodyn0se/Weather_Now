@@ -47,11 +47,14 @@ class WeatherWidget extends StatelessWidget {
                         '${weather.currTemp!.toStringAsFixed(2)} \u2103',
                         style: Theme.of(context).textTheme.headline3,
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
                         Text('Low: ${weather.minTemp!.toStringAsFixed(2)} C'),
-                        Text('High: ${weather.maxTemp!.toStringAsFixed(2)} C'),
-                        Text('Humidity: ${weather.humidity}%'),
                         Text(
-                            'Air Pressure: ${weather.airPressure!.toInt()} hPa'),
+                              'High: ${weather.maxTemp!.toStringAsFixed(2)} C'),
+                        ],
+                      ),
                       ],
                     ),
                   ),
