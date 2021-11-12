@@ -14,7 +14,8 @@ class WeatherWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SafeArea(
+      child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         RichText(
@@ -128,6 +129,7 @@ class WeatherWidget extends StatelessWidget {
           ],
         ),
       ],
+      ),
     );
   }
 
