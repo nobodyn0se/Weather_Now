@@ -8,9 +8,13 @@ class WeatherModel {
   final double? airPressure;
   final int? humidity;
   final double? visibility;
+  final String? city;
+  final String? country;
 
   WeatherModel(
       {this.airPressure,
+      this.city,
+      this.country,
       this.currTemp,
       this.humidity,
       this.maxTemp,
@@ -24,6 +28,8 @@ class WeatherModel {
     final initWeather = json['consolidated_weather'][0];
     return WeatherModel(
         airPressure: initWeather['air_pressure'],
+        city: json['title'],
+        country: json['parent']['title'],
         currTemp: initWeather['the_temp'],
         humidity: initWeather['humidity'],
         maxTemp: initWeather['max_temp'],
