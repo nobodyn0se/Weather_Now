@@ -71,6 +71,9 @@ class WeatherWidget extends StatelessWidget {
                       margin: const EdgeInsets.symmetric(vertical: 4),
                       height: weather.humidity! * 0.01 * 250,
                       width: 27,
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).secondaryHeaderColor),
+                  ),
                   Align(
                     alignment: Alignment.center,
                     child: Text(
