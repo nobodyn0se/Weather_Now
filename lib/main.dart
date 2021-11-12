@@ -47,7 +47,6 @@ class _MyAppState extends State<MyApp> {
           create: (context) => ThemeBloc(),
         ),
         BlocProvider<WeatherBloc>(
-            lazy: false,
             create: (context) =>
                 WeatherBloc(weatherRepository: weatherRepository))
       ],
