@@ -51,7 +51,21 @@ class WeatherWidget extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text('Low: ${weather.minTemp!.toStringAsFixed(2)} C'),
+                          Card(
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                  'Low: ${weather.minTemp!.toStringAsFixed(2)} C'),
+                            ),
+                            shape: const RoundedRectangleBorder(
+                              side: BorderSide(
+                                color: Colors.lightBlue,
+                              ),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                          ),
                           Text(
                               'High: ${weather.maxTemp!.toStringAsFixed(2)} C'),
                         ],
