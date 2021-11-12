@@ -95,6 +95,7 @@ class WeatherWidget extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
+                        createTempMeter(context),
                         Text(
                           '${weather.currTemp!.toStringAsFixed(2)} \u2103',
                           style: Theme.of(context).textTheme.headline3,
@@ -186,6 +187,41 @@ class WeatherWidget extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Stack createTempMeter(BuildContext context) {
+    return Stack(
+      alignment: Alignment.centerRight,
+      children: <Widget>[
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: Theme.of(context).textTheme.bodyText1!.color!),
+            gradient: const LinearGradient(
+              colors: [
+                Colors.white,
+                Colors.lightBlue,
+                Colors.blue,
+                Colors.green,
+                Colors.yellow,
+                Colors.orange,
+                Colors.deepOrange,
+                Colors.red,
+                Colors.brown,
+              ],
+              stops: [0.05, 0.2, 0.3, 0.45, 0.6, 0.65, 0.7, 0.75, 0.8],
+            ),
+          ),
+          height: 10,
+          width: 240,
+        ),
+        Container(
+          color: Theme.of(context).primaryColor,
+          height: 10,
+          width: (240 - (weather.currTemp! + 50) * 2),
+        ),
+      ],
     );
   }
 
