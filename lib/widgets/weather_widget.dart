@@ -14,6 +14,8 @@ class WeatherWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
