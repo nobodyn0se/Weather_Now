@@ -94,11 +94,15 @@ class WeatherWidget extends StatelessWidget {
           ),
         ),
         Text('Air Pressure: ${weather.airPressure!.toInt()} hPa'),
-        Text('Wind speed: ${weather.windSpeed!.toStringAsFixed(2)}'),
-        Transform.rotate(
-          child: const Icon(Icons.south, size: 45),
-          //Text('Sind Direction: ${weather.windDirection!.toInt()}'),
-          angle: (weather.windDirection! * math.pi / 180),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Transform.rotate(
+              child: const Icon(Icons.south, size: 45),
+              angle: (weather.windDirection! * math.pi / 180),
+            ),
+            Text('${weather.windSpeed!.toStringAsFixed(2)} mph'),
+          ],
         ),
       ],
     );
