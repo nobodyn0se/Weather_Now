@@ -53,6 +53,7 @@ class _WeatherPageState extends State<WeatherPage> {
               weatherState.weather.currTemp != null) {
             return WeatherWidget(
               weather: weatherState.weather,
+              weatherIcon: weatherState.weatherIcon,
             );
           } else if (weatherState is WeatherException) {
             return Text(weatherState.errorMessage);

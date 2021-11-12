@@ -28,7 +28,9 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         final WeatherModel weather =
             await weatherRepository.fetchWeatherData(event.city);
         final Icon weatherIcon = _mapConditionToIcon(weather.weatherCondition!);
-        emit(WeatherFetched(weather: weather));
+        emit(
+          WeatherFetched(weather: weather, weatherIcon: weatherIcon),
+        );
       } on TimeoutException {
         emit(WeatherException(
             errorMessage: 'Session timed out! Try again later'));

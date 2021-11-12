@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
 
+import 'package:flutter/material.dart';
+
 import '../../weather_model/weather_model.dart';
 
 abstract class WeatherState extends Equatable {}
@@ -16,11 +18,12 @@ class WeatherFetching extends WeatherState {
 
 class WeatherFetched extends WeatherState {
   final WeatherModel weather;
+  final Icon weatherIcon;
 
-  WeatherFetched({required this.weather});
+  WeatherFetched({required this.weather, required this.weatherIcon});
 
   @override
-  List<Object?> get props => [weather];
+  List<Object?> get props => [weather, weatherIcon];
 }
 
 class WeatherException extends WeatherState {

@@ -8,9 +8,11 @@ class WeatherWidget extends StatelessWidget {
   const WeatherWidget({
     Key? key,
     required this.weather,
+    required this.weatherIcon,
   }) : super(key: key);
 
   final WeatherModel weather;
+  final Icon weatherIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class WeatherWidget extends StatelessWidget {
               ],
             ),
           ),
+          weatherIcon,
           Divider(
             color: Theme.of(context).textTheme.bodyText1!.color,
             indent: 0.1 * screenWidth,
