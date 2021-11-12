@@ -22,26 +22,62 @@ class WeatherWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: Theme.of(context).textTheme.headline4,
-              children: <TextSpan>[
-                TextSpan(
-                  text: '${weather.city}\n',
-                ),
-                TextSpan(
-                  text: '${weather.country}\n',
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                TextSpan(
-                  text: weather.weatherCondition,
-                  style: Theme.of(context).textTheme.caption,
-                ),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '${weather.city}',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              Icon(
+                weatherIcon,
+              ),
+              // Wrap(
+              //   direction: Axis.vertical,
+              //   alignment: WrapAlignment.start,
+              //   spacing: 20,
+              //   children: <Widget>[
+              //     Icon(
+              //       weatherIcon,
+              //       size: 20,
+              //     ),
+              //     Text(
+              //       weather.weatherCondition!,
+              //       style: Theme.of(context).textTheme.caption,
+              //     ),
+              //   ],
+              // ),
+              // RichText(
+              //   text: TextSpan(
+              //     style: Theme.of(context).textTheme.headline4,
+              //     children: <TextSpan>[
+              //       TextSpan(
+              //         text: '${weather.city}\n',
+              //       ),
+              //       TextSpan(
+              //         text: '${weather.country}\n',
+              //         style: Theme.of(context).textTheme.headline6,
+              //       ),
+              //     ],
+              //   ),
+              // ),
+            ],
           ),
-          weatherIcon,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                '${weather.country}',
+                style: Theme.of(context).textTheme.headline6,
+              ),
+              Text(
+                '${weather.weatherCondition}',
+                style: Theme.of(context).textTheme.caption,
+              ),
+            ],
+          ),
           Divider(
             color: Theme.of(context).textTheme.bodyText1!.color,
             indent: 0.1 * screenWidth,
