@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dart:math' as math;
+
 import '../weather_model/weather_model.dart';
 
 class WeatherWidget extends StatelessWidget {
@@ -92,6 +94,12 @@ class WeatherWidget extends StatelessWidget {
           ),
         ),
         Text('Air Pressure: ${weather.airPressure!.toInt()} hPa'),
+        Text('Wind speed: ${weather.windSpeed!.toStringAsFixed(2)}'),
+        Transform.rotate(
+          child: const Icon(Icons.south, size: 45),
+          //Text('Sind Direction: ${weather.windDirection!.toInt()}'),
+          angle: (weather.windDirection! * math.pi / 180),
+        ),
       ],
     );
   }
