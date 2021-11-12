@@ -15,10 +15,10 @@ class WeatherWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         RichText(
-                textAlign: TextAlign.center,
+          textAlign: TextAlign.center,
           text: TextSpan(
             style: Theme.of(context).textTheme.headline4,
             children: <TextSpan>[
@@ -28,7 +28,7 @@ class WeatherWidget extends StatelessWidget {
               TextSpan(
                 text: weather.weatherCondition,
                 style: Theme.of(context).textTheme.caption,
-            ),
+              ),
             ],
           ),
         ),
