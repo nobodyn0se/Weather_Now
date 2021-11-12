@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, themeState) {
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Weather Now',
             theme: themeState.themeData,
             initialRoute: SearchPage.routeName,
             routes: {
