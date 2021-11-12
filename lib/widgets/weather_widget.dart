@@ -66,8 +66,21 @@ class WeatherWidget extends StatelessWidget {
                                   BorderRadius.all(Radius.circular(4)),
                             ),
                           ),
-                          Text(
-                              'High: ${weather.maxTemp!.toStringAsFixed(2)} C'),
+                          Card(
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                  'High: ${weather.maxTemp!.toStringAsFixed(2)} C'),
+                            ),
+                            shape: const RoundedRectangleBorder(
+                              side: BorderSide(
+                                color: Colors.red,
+                              ),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                          ),
                         ],
                       ),
                     ],
