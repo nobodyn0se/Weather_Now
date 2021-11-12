@@ -116,7 +116,12 @@ class WeatherWidget extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            Text('${weather.windSpeed!.toStringAsFixed(2)} mph'),
+            Text(
+              '${weather.windSpeed!.toStringAsFixed(2)} mph',
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
           ],
         ),
       ],
