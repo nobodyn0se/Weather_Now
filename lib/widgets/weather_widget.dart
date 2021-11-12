@@ -17,17 +17,19 @@ class WeatherWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        SizedBox(
-          width: double.maxFinite,
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                city,
-                style: Theme.of(context).textTheme.headline5,
+        RichText(
                 textAlign: TextAlign.center,
+          text: TextSpan(
+            style: Theme.of(context).textTheme.headline4,
+            children: <TextSpan>[
+              TextSpan(
+                text: '$city\n',
               ),
+              TextSpan(
+                text: weather.weatherCondition,
+                style: Theme.of(context).textTheme.caption,
             ),
+            ],
           ),
         ),
         SizedBox(
@@ -90,7 +92,6 @@ class WeatherWidget extends StatelessWidget {
           ),
         ),
         Text('Air Pressure: ${weather.airPressure!.toInt()} hPa'),
-        Text(weather.weatherCondition!),
       ],
     );
   }
