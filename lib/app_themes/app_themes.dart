@@ -19,6 +19,7 @@ class AppThemeData {
           color: Colors.black,
         ),
         bodyText2: TextStyle(color: Colors.black),
+        headline3: TextStyle(color: Colors.black),
         headline4: TextStyle(color: Colors.black),
         subtitle1: TextStyle(color: Colors.black),
       ),
@@ -38,6 +39,7 @@ class AppThemeData {
           color: Colors.white,
         ),
         bodyText2: TextStyle(color: Colors.white),
+        headline3: TextStyle(color: Colors.white),
         headline4: TextStyle(color: Colors.white),
         subtitle1: TextStyle(color: Colors.white), //for search input
       ),
