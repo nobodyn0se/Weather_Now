@@ -69,8 +69,7 @@ class WeatherWidget extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,
                         border: Border.all(
-                            color:
-                                Theme.of(context).textTheme.bodyText1!.color!),
+                          color: Theme.of(context).textTheme.bodyText1!.color!),
                       ),
                     ),
                     Container(
