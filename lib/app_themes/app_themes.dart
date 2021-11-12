@@ -11,9 +11,6 @@ class AppThemeData {
     AppThemes.light: ThemeData(
       primaryColor: Colors.white,
       scaffoldBackgroundColor: Colors.grey[350],
-      cardTheme: const CardTheme(
-        color: Colors.white,
-      ),
       textTheme: Typography.blackCupertino,
       secondaryHeaderColor: Colors.lightBlue[100],
       appBarTheme:
@@ -23,9 +20,6 @@ class AppThemeData {
     AppThemes.dark: ThemeData(
       primaryColor: Colors.grey[800],
       scaffoldBackgroundColor: Colors.black,
-      cardTheme: CardTheme(
-        color: Colors.grey[800],
-      ),
       textTheme: Typography.whiteCupertino,
       secondaryHeaderColor: Colors.lightBlue,
       appBarTheme:
