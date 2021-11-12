@@ -46,7 +46,7 @@ class _WeatherPageState extends State<WeatherPage> {
             return const CircularProgressIndicator();
           } else if (weatherState is WeatherFetched &&
               weatherState.weather.currTemp != null) {
-            return Container(
+            return SizedBox(
               //color: Colors.red,
               width: 300,
               height: 500,
