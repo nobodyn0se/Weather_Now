@@ -18,7 +18,7 @@ class WeatherFetching extends WeatherState {
 
 class WeatherFetched extends WeatherState {
   final WeatherModel weather;
-  final Icon weatherIcon;
+  final IconData weatherIcon;
 
   WeatherFetched({required this.weather, required this.weatherIcon});
 

@@ -12,7 +12,7 @@ class WeatherWidget extends StatelessWidget {
   }) : super(key: key);
 
   final WeatherModel weather;
-  final Icon weatherIcon;
+  final IconData weatherIcon;
 
   @override
   Widget build(BuildContext context) {

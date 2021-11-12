@@ -27,7 +27,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       try {
         final WeatherModel weather =
             await weatherRepository.fetchWeatherData(event.city);
-        final Icon weatherIcon = _mapConditionToIcon(weather.weatherCondition!);
+        final IconData weatherIcon =
+            _mapConditionToIcon(weather.weatherCondition!);
         emit(
           WeatherFetched(weather: weather, weatherIcon: weatherIcon),
         );
@@ -52,7 +53,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     }
   }
 
-  Icon _mapConditionToIcon(String weatherCondition) {
+  IconData _mapConditionToIcon(String weatherCondition) {
     IconData boxedIcon;
     switch (weatherCondition) {
       case 'Snow':
@@ -88,6 +89,6 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       default:
         boxedIcon = WeatherIcons.day_cloudy;
     }
-    return Icon(boxedIcon);
+    return boxedIcon;
   }
 }
