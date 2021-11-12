@@ -25,7 +25,11 @@ class WeatherWidget extends StatelessWidget {
             style: Theme.of(context).textTheme.headline4,
             children: <TextSpan>[
               TextSpan(
-                text: '$city\n',
+                text: '${weather.city}\n',
+              ),
+              TextSpan(
+                text: '${weather.country}\n',
+                style: Theme.of(context).textTheme.headline6,
               ),
               TextSpan(
                 text: weather.weatherCondition,
@@ -93,7 +97,8 @@ class WeatherWidget extends StatelessWidget {
             ],
           ),
         ),
-        Text('Air Pressure: ${weather.airPressure!.toInt()} hPa'),
+        Text('Air Pressure: ${weather.airPressure!.toInt()} hPa\n'
+            'Visibility: ${weather.visibility!.toStringAsFixed(2)} miles'),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
