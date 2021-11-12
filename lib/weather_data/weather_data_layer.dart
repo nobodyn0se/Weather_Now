@@ -12,7 +12,9 @@ class WeatherDataClient {
 
   Future<int> getLocID(String city) async {
     final locURL = Uri.parse('$_mainURL/api/location/search/?query=$city');
-    final locResponse = await httpClient.get(locURL);
+    final locResponse = await httpClient.get(locURL).timeout(
+          const Duration(seconds: 10),
+        );
     if (locResponse.statusCode == 200) {
       final locResult = jsonDecode(locResponse.body);
       return (locResult.first)['woeid'];
@@ -22,7 +24,9 @@ class WeatherDataClient {
 
   Future<WeatherModel> getWeatherData(int locID) async {
     final weatherURL = Uri.parse('$_mainURL/api/location/$locID');
-    final weatherResponse = await httpClient.get(weatherURL);
+    final weatherResponse = await httpClient.get(weatherURL).timeout(
+          const Duration(seconds: 10),
+        );
     if (weatherResponse.statusCode == 200) {
       final weatherResult = jsonDecode(weatherResponse.body);
       return WeatherModel.fromJson(weatherResult);
