@@ -60,39 +60,43 @@ class WeatherWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Stack(
-                alignment: Alignment.bottomCenter,
-                children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 3),
-                    height: 250,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      border: Border.all(
-                          color: Theme.of(context).textTheme.bodyText1!.color!),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 4),
-                    height: weather.humidity! * 0.01 * 250,
-                    width: 27,
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).secondaryHeaderColor),
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      '${weather.humidity.toString()}\n%',
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
+              createHumidityMeter(context),
             ],
           ),
         ),
         Text('Air Pressure: ${weather.airPressure!.toInt()} hPa'),
+      ],
+    );
+  }
+
+  Stack createHumidityMeter(BuildContext context) {
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: <Widget>[
+        Container(
+          margin: const EdgeInsets.symmetric(vertical: 3),
+          height: 250,
+          width: 30,
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+            border: Border.all(
+                color: Theme.of(context).textTheme.bodyText1!.color!),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.symmetric(vertical: 4),
+          height: weather.humidity! * 0.01 * 250,
+          width: 27,
+          decoration:
+              BoxDecoration(color: Theme.of(context).secondaryHeaderColor),
+        ),
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            '${weather.humidity.toString()}\n%',
+            textAlign: TextAlign.center,
+          ),
+        ),
       ],
     );
   }
