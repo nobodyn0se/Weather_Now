@@ -14,15 +14,7 @@ class AppThemeData {
       cardTheme: const CardTheme(
         color: Colors.white,
       ),
-      textTheme: const TextTheme(
-        bodyText1: TextStyle(
-          color: Colors.black,
-        ),
-        bodyText2: TextStyle(color: Colors.black),
-        headline3: TextStyle(color: Colors.black),
-        headline4: TextStyle(color: Colors.black),
-        subtitle1: TextStyle(color: Colors.black),
-      ),
+      textTheme: Typography.blackCupertino,
       secondaryHeaderColor: Colors.lightBlue[100],
       appBarTheme:
           const AppBarTheme(iconTheme: IconThemeData(color: Colors.black)),
@@ -34,15 +26,7 @@ class AppThemeData {
       cardTheme: CardTheme(
         color: Colors.grey[800],
       ),
-      textTheme: const TextTheme(
-        bodyText1: TextStyle(
-          color: Colors.white,
-        ),
-        bodyText2: TextStyle(color: Colors.white),
-        headline3: TextStyle(color: Colors.white),
-        headline4: TextStyle(color: Colors.white),
-        subtitle1: TextStyle(color: Colors.white), //for search input
-      ),
+      textTheme: Typography.whiteCupertino,
       secondaryHeaderColor: Colors.lightBlue,
       appBarTheme:
           const AppBarTheme(iconTheme: IconThemeData(color: Colors.white)),
