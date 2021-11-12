@@ -52,7 +52,6 @@ class _WeatherPageState extends State<WeatherPage> {
           } else if (weatherState is WeatherFetched &&
               weatherState.weather.currTemp != null) {
             return WeatherWidget(
-              city: city,
               weather: weatherState.weather,
             );
           } else if (weatherState is WeatherException) {

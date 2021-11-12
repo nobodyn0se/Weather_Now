@@ -7,11 +7,9 @@ import '../weather_model/weather_model.dart';
 class WeatherWidget extends StatelessWidget {
   const WeatherWidget({
     Key? key,
-    required this.city,
     required this.weather,
   }) : super(key: key);
 
-  final String city;
   final WeatherModel weather;
 
   @override
