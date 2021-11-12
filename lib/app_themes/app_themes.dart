@@ -10,7 +10,7 @@ class AppThemeData {
   static final themeData = {
     AppThemes.light: ThemeData(
       primaryColor: Colors.white,
-      scaffoldBackgroundColor: Colors.grey[350],
+      scaffoldBackgroundColor: Colors.grey[200],
       textTheme: Typography.blackCupertino,
       secondaryHeaderColor: Colors.lightBlue[100],
       appBarTheme:
