@@ -97,9 +97,24 @@ class WeatherWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Transform.rotate(
-              child: const Icon(Icons.south, size: 45),
-              angle: (weather.windDirection! * math.pi / 180),
+            Card(
+              color: Theme.of(context).scaffoldBackgroundColor,
+              shape: const CircleBorder(
+                side: BorderSide(
+                  color: Colors.orangeAccent,
+                  width: 4,
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Transform.rotate(
+                  child: const Icon(Icons.south, size: 45),
+                  angle: (weather.windDirection! * math.pi / 180),
+                ),
+              ),
+            ),
+            const SizedBox(
+              width: 10,
             ),
             Text('${weather.windSpeed!.toStringAsFixed(2)} mph'),
           ],
