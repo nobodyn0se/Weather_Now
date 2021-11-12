@@ -39,6 +39,7 @@ class WeatherWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: Card(
+                  elevation: 0,
                   color: Theme.of(context).scaffoldBackgroundColor,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
