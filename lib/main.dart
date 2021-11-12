@@ -12,8 +12,8 @@ import './bloc/weather/weather_bloc.dart';
 import './repository/weather_repository.dart';
 import './weather_data/weather_data_layer.dart';
 
-import './widgets/main_page.dart';
-import './widgets/weather_page.dart';
+import './pages/main_page.dart';
+import './pages/weather_page.dart';
 
 void main() {
   runApp(const MyApp());
