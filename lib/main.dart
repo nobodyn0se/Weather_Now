@@ -56,9 +56,9 @@ class _MyAppState extends State<MyApp> {
           return MaterialApp(
             title: 'Flutter Demo',
             theme: themeState.themeData,
-            initialRoute: MainPage.routeName,
+            initialRoute: SearchPage.routeName,
             routes: {
-              MainPage.routeName: (context) => MainPage(),
+              SearchPage.routeName: (context) => SearchPage(),
               WeatherPage.routeName: (context) => const WeatherPage(),
             },
           );

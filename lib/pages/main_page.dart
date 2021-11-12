@@ -1,4 +1,3 @@
-import 'package:bloc_app/bloc/weather/weather_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
@@ -8,8 +7,8 @@ import '../bloc/theme/theme_event.dart';
 
 import './weather_page.dart';
 
-class MainPage extends StatelessWidget {
-  MainPage({Key? key}) : super(key: key);
+class SearchPage extends StatelessWidget {
+  SearchPage({Key? key}) : super(key: key);
   static const String routeName = "/search_page";
   final TextEditingController _searchTextController = TextEditingController();
 
