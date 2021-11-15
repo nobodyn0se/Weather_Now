@@ -208,14 +208,16 @@ class WeatherWidget extends StatelessWidget {
     );
   }
 
-  Stack createHumidityMeter(BuildContext context) {
-    return Stack(
-      alignment: Alignment.bottomCenter,
+  SizedBox createHumidityMeter(BuildContext context) {
+    return SizedBox(
+      width: 250,
+      child: Stack(
+        alignment: Alignment.centerLeft,
       children: <Widget>[
         Container(
-          margin: const EdgeInsets.symmetric(vertical: 3),
-          height: 250,
-          width: 30,
+            margin: const EdgeInsets.symmetric(horizontal: 3),
+            height: 30,
+            width: 250,
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
             border: Border.all(
@@ -223,20 +225,21 @@ class WeatherWidget extends StatelessWidget {
           ),
         ),
         Container(
-          margin: const EdgeInsets.symmetric(vertical: 4),
-          height: weather.humidity! * 0.01 * 250,
-          width: 27,
+            margin: const EdgeInsets.symmetric(horizontal: 4),
+            height: 27,
+            width: weather.humidity! * 0.01 * 250,
           decoration:
               BoxDecoration(color: Theme.of(context).secondaryHeaderColor),
         ),
         Align(
           alignment: Alignment.center,
           child: Text(
-            '${weather.humidity.toString()}\n%',
+              weather.humidity.toString(),
             textAlign: TextAlign.center,
           ),
         ),
       ],
+      ),
     );
   }
 }
