@@ -125,6 +125,7 @@ class WeatherWidget extends StatelessWidget {
                 VerticalDivider(
                   color: Theme.of(context).textTheme.bodyText1!.color,
                   thickness: 1,
+                  width: 25,
                 ),
                 // Text('Air Pressure: ${weather.airPressure!.toInt()} hPa\n'
                 //     'Visibility: ${weather.visibility!.toStringAsFixed(2)} miles'),
