@@ -70,12 +70,14 @@ class WeatherWidget extends StatelessWidget {
               color: Theme.of(context).scaffoldBackgroundColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   createTempMeter(context),
                   Text(
                     '${weather.currTemp!.toStringAsFixed(2)} \u2103',
                     style: Theme.of(context).textTheme.headline3,
                   ),
+                  createHumidityMeter(context),
                   // Row(
                   //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   //   children: <Widget>[
