@@ -91,6 +91,7 @@ class WeatherWidget extends StatelessWidget {
             color: Theme.of(context).textTheme.bodyText1!.color,
             indent: 0.1 * screenWidth,
             endIndent: 0.1 * screenWidth,
+            height: 0,
           ),
           IntrinsicHeight(
             child: Row(
