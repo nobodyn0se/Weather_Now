@@ -51,6 +51,7 @@ class WeatherWidget extends StatelessWidget {
                 ],
                 direction: Axis.vertical,
                 spacing: 15,
+                crossAxisAlignment: WrapCrossAlignment.center,
               ),
             ],
           ),
