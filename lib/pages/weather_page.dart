@@ -56,7 +56,9 @@ class _WeatherPageState extends State<WeatherPage> {
               weatherIcon: weatherState.weatherIcon,
             );
           } else if (weatherState is WeatherException) {
-            return Text(weatherState.errorMessage);
+            return Center(
+              child: Text(weatherState.errorMessage),
+            );
           } else {
             return const Text('Nothing to display');
           }
