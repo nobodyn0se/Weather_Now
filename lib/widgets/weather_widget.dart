@@ -60,11 +60,6 @@ class WeatherWidget extends StatelessWidget {
               ],
             ),
           ),
-          Divider(
-            color: Theme.of(context).textTheme.bodyText1!.color,
-            indent: 0.1 * screenWidth,
-            endIndent: 0.1 * screenWidth,
-          ),
           SizedBox(
             width: 350,
             height: 200,
