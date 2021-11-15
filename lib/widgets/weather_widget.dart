@@ -24,31 +24,31 @@ class WeatherWidget extends StatelessWidget {
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
                 height: 70,
                 child: RichText(
                   text: TextSpan(
-                style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.headline4,
                     children: <TextSpan>[
                       TextSpan(
                         text: '${weather.city}\n',
-              ),
+                      ),
                       TextSpan(
                         text: '${weather.country}\n',
                         style: Theme.of(context).textTheme.headline6,
-              ),
-            ],
-          ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Wrap(
-            children: <Widget>[
+                children: <Widget>[
                   Icon(weatherIcon),
-              Text(
+                  Text(
                     weather.weatherCondition!,
-                style: Theme.of(context).textTheme.caption,
+                    style: Theme.of(context).textTheme.caption,
                   ),
                 ],
                 direction: Axis.vertical,
