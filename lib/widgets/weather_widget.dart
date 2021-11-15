@@ -90,10 +90,44 @@ class WeatherWidget extends StatelessWidget {
             indent: 0.1 * screenWidth,
             endIndent: 0.1 * screenWidth,
           ),
+          IntrinsicHeight(
+            child: Row(
               //Start of wind data display
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Card(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  shape: const CircleBorder(
+                    side: BorderSide(
+                      color: Colors.orangeAccent,
+                      width: 4,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Transform.rotate(
+                      child: const Icon(Icons.south, size: 45),
+                      angle: (weather.windDirection! * math.pi / 180),
+                    ),
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  '${weather.windSpeed!.toStringAsFixed(2)} mph',
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+                VerticalDivider(
+                  color: Theme.of(context).textTheme.bodyText1!.color,
+                  thickness: 1,
+                ),
+                Text('Air Pressure: ${weather.airPressure!.toInt()} hPa\n'
+                    'Visibility: ${weather.visibility!.toStringAsFixed(2)} miles'),
+              ],
+            ),
           ),
         ],
       ),
