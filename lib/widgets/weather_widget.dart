@@ -171,8 +171,11 @@ class WeatherWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(
-          weather.minTemp!.toStringAsFixed(1),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: Text(
+            weather.minTemp!.toStringAsFixed(1),
+          ),
         ),
         Stack(
           alignment: Alignment.centerRight,
@@ -206,8 +209,11 @@ class WeatherWidget extends StatelessWidget {
             ),
           ],
         ),
-        Text(
-          weather.maxTemp!.toStringAsFixed(1),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: Text(
+            weather.maxTemp!.toStringAsFixed(1),
+          ),
         ),
       ],
     );
@@ -239,7 +245,7 @@ class WeatherWidget extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Text(
-              weather.humidity.toString(),
+              '${weather.humidity.toString()}%',
               textAlign: TextAlign.center,
             ),
           ),
