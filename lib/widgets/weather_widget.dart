@@ -218,7 +218,7 @@ class WeatherWidget extends StatelessWidget {
         children: <Widget>[
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 3),
-            height: 30,
+            height: 25,
             width: 250,
             decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,
@@ -228,7 +228,7 @@ class WeatherWidget extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 4),
-            height: 27,
+            height: 22,
             width: weather.humidity! * 0.01 * 250,
             decoration:
                 BoxDecoration(color: Theme.of(context).secondaryHeaderColor),
