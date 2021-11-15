@@ -130,13 +130,34 @@ class WeatherWidget extends StatelessWidget {
                 ),
                 // Text('Air Pressure: ${weather.airPressure!.toInt()} hPa\n'
                 //     'Visibility: ${weather.visibility!.toStringAsFixed(2)} miles'),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    const Icon(
-                      WeatherIcons.barometer,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        const Icon(
+                          WeatherIcons.barometer,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text('${weather.airPressure!.toInt()} hPa'),
+                      ],
                     ),
-                    Text('${weather.airPressure!.toInt()} hPa'),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        const Icon(
+                          Icons.visibility_outlined,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text('${weather.visibility!.toStringAsFixed(2)} miles'),
+                      ],
+                    ),
                   ],
                 ),
               ],
