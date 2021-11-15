@@ -47,7 +47,10 @@ class WeatherWidget extends StatelessWidget {
                 ),
                 Wrap(
                   children: <Widget>[
-                    Icon(weatherIcon),
+                    Icon(
+                      weatherIcon,
+                      size: 30,
+                    ),
                     Text(
                       weather.weatherCondition!,
                       style: Theme.of(context).textTheme.caption,
