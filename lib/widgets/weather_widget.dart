@@ -175,6 +175,7 @@ class WeatherWidget extends StatelessWidget {
           padding: const EdgeInsets.only(right: 8.0),
           child: Text(
             weather.minTemp!.toStringAsFixed(1),
+            style: Theme.of(context).textTheme.subtitle1,
           ),
         ),
         Stack(
@@ -213,6 +214,7 @@ class WeatherWidget extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8.0),
           child: Text(
             weather.maxTemp!.toStringAsFixed(1),
+            style: Theme.of(context).textTheme.subtitle1,
           ),
         ),
       ],
