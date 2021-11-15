@@ -215,32 +215,32 @@ class WeatherWidget extends StatelessWidget {
       width: 250,
       child: Stack(
         alignment: Alignment.centerLeft,
-      children: <Widget>[
-        Container(
+        children: <Widget>[
+          Container(
             margin: const EdgeInsets.symmetric(horizontal: 3),
             height: 30,
             width: 250,
-          decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor,
-            border: Border.all(
-                color: Theme.of(context).textTheme.bodyText1!.color!),
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              border: Border.all(
+                  color: Theme.of(context).textTheme.bodyText1!.color!),
+            ),
           ),
-        ),
-        Container(
+          Container(
             margin: const EdgeInsets.symmetric(horizontal: 4),
             height: 27,
             width: weather.humidity! * 0.01 * 250,
-          decoration:
-              BoxDecoration(color: Theme.of(context).secondaryHeaderColor),
-        ),
-        Align(
-          alignment: Alignment.center,
-          child: Text(
-              weather.humidity.toString(),
-            textAlign: TextAlign.center,
+            decoration:
+                BoxDecoration(color: Theme.of(context).secondaryHeaderColor),
           ),
-        ),
-      ],
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              weather.humidity.toString(),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
       ),
     );
   }
