@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'dart:math' as math;
 
+import 'package:weather_icons/weather_icons.dart';
+
 import '../weather_model/weather_model.dart';
 
 class WeatherWidget extends StatelessWidget {
@@ -124,8 +126,17 @@ class WeatherWidget extends StatelessWidget {
                   color: Theme.of(context).textTheme.bodyText1!.color,
                   thickness: 1,
                 ),
-                Text('Air Pressure: ${weather.airPressure!.toInt()} hPa\n'
-                    'Visibility: ${weather.visibility!.toStringAsFixed(2)} miles'),
+                // Text('Air Pressure: ${weather.airPressure!.toInt()} hPa\n'
+                //     'Visibility: ${weather.visibility!.toStringAsFixed(2)} miles'),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    const Icon(
+                      WeatherIcons.barometer,
+                    ),
+                    Text('${weather.airPressure!.toInt()} hPa'),
+                  ],
+                ),
               ],
             ),
           ),
