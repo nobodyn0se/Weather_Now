@@ -22,40 +22,43 @@ class WeatherWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 70,
-                child: RichText(
-                  text: TextSpan(
-                    style: Theme.of(context).textTheme.headline4,
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: '${weather.city}\n',
-                      ),
-                      TextSpan(
-                        text: '${weather.country}\n',
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                    ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 70,
+                  child: RichText(
+                    text: TextSpan(
+                      style: Theme.of(context).textTheme.headline4,
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: '${weather.city}\n',
+                        ),
+                        TextSpan(
+                          text: '${weather.country}\n',
+                          style: Theme.of(context).textTheme.headline6,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Wrap(
-                children: <Widget>[
-                  Icon(weatherIcon),
-                  Text(
-                    weather.weatherCondition!,
-                    style: Theme.of(context).textTheme.caption,
-                  ),
-                ],
-                direction: Axis.vertical,
-                spacing: 15,
-                crossAxisAlignment: WrapCrossAlignment.center,
-              ),
-            ],
+                Wrap(
+                  children: <Widget>[
+                    Icon(weatherIcon),
+                    Text(
+                      weather.weatherCondition!,
+                      style: Theme.of(context).textTheme.caption,
+                    ),
+                  ],
+                  direction: Axis.vertical,
+                  spacing: 15,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                ),
+              ],
+            ),
           ),
           Divider(
             color: Theme.of(context).textTheme.bodyText1!.color,
