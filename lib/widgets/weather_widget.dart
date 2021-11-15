@@ -26,55 +26,31 @@ class WeatherWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                '${weather.city}',
+                child: RichText(
+                  text: TextSpan(
                 style: Theme.of(context).textTheme.headline4,
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: '${weather.city}\n',
               ),
-              Icon(
-                weatherIcon,
+                      TextSpan(
+                        text: '${weather.country}\n',
+                        style: Theme.of(context).textTheme.headline6,
               ),
-              // Wrap(
-              //   direction: Axis.vertical,
-              //   alignment: WrapAlignment.start,
-              //   spacing: 20,
-              //   children: <Widget>[
-              //     Icon(
-              //       weatherIcon,
-              //       size: 20,
-              //     ),
-              //     Text(
-              //       weather.weatherCondition!,
-              //       style: Theme.of(context).textTheme.caption,
-              //     ),
-              //   ],
-              // ),
-              // RichText(
-              //   text: TextSpan(
-              //     style: Theme.of(context).textTheme.headline4,
-              //     children: <TextSpan>[
-              //       TextSpan(
-              //         text: '${weather.city}\n',
-              //       ),
-              //       TextSpan(
-              //         text: '${weather.country}\n',
-              //         style: Theme.of(context).textTheme.headline6,
-              //       ),
-              //     ],
-              //   ),
-              // ),
             ],
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text(
-                '${weather.country}',
-                style: Theme.of(context).textTheme.headline6,
+                ),
               ),
+              Wrap(
+            children: <Widget>[
+                  Icon(weatherIcon),
               Text(
-                '${weather.weatherCondition}',
+                    weather.weatherCondition!,
                 style: Theme.of(context).textTheme.caption,
+                  ),
+                ],
+                direction: Axis.vertical,
+                spacing: 15,
               ),
             ],
           ),
