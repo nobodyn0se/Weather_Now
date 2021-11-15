@@ -79,47 +79,44 @@ class WeatherWidget extends StatelessWidget {
                           '${weather.currTemp!.toStringAsFixed(2)} \u2103',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Card(
-                              color: Theme.of(context).scaffoldBackgroundColor,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                    'Low: ${weather.minTemp!.toStringAsFixed(2)} C'),
-                              ),
-                              shape: const RoundedRectangleBorder(
-                                side: BorderSide(
-                                  color: Colors.lightBlue,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(4)),
-                              ),
-                            ),
-                            Card(
-                              color: Theme.of(context).scaffoldBackgroundColor,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                    'High: ${weather.maxTemp!.toStringAsFixed(2)} C'),
-                              ),
-                              shape: const RoundedRectangleBorder(
-                                side: BorderSide(
-                                  color: Colors.red,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(4)),
-                              ),
-                            ),
-                          ],
-                        ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    //   children: <Widget>[
+                    //     Card(
+                    //       color: Theme.of(context).scaffoldBackgroundColor,
+                    //       child: Padding(
+                    //         padding: const EdgeInsets.all(8.0),
+                    //         child: Text(
+                    //             'Low: ${weather.minTemp!.toStringAsFixed(2)} C'),
+                    //       ),
+                    //       shape: const RoundedRectangleBorder(
+                    //         side: BorderSide(
+                    //           color: Colors.lightBlue,
+                    //         ),
+                    //         borderRadius:
+                    //             BorderRadius.all(Radius.circular(4)),
+                    //       ),
+                    //     ),
+                    //     Card(
+                    //       color: Theme.of(context).scaffoldBackgroundColor,
+                    //       child: Padding(
+                    //         padding: const EdgeInsets.all(8.0),
+                    //         child: Text(
+                    //             'High: ${weather.maxTemp!.toStringAsFixed(2)} C'),
+                    //       ),
+                    //       shape: const RoundedRectangleBorder(
+                    //         side: BorderSide(
+                    //           color: Colors.red,
+                    //         ),
+                    //         borderRadius:
+                    //             BorderRadius.all(Radius.circular(4)),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                       ],
                     ),
                   ),
-                ),
-                createHumidityMeter(context),
-              ],
             ),
           ),
           Divider(
@@ -169,8 +166,14 @@ class WeatherWidget extends StatelessWidget {
     );
   }
 
-  Stack createTempMeter(BuildContext context) {
-    return Stack(
+  Row createTempMeter(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(
+          weather.minTemp!.toStringAsFixed(1),
+        ),
+        Stack(
       alignment: Alignment.centerRight,
       children: <Widget>[
         Container(
@@ -199,6 +202,11 @@ class WeatherWidget extends StatelessWidget {
           color: Theme.of(context).primaryColor,
           height: 10,
           width: (240 - (weather.currTemp! + 50) * 2),
+            ),
+          ],
+        ),
+        Text(
+          weather.maxTemp!.toStringAsFixed(1),
         ),
       ],
     );
