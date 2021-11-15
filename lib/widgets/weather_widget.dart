@@ -81,41 +81,6 @@ class WeatherWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline3,
                   ),
                   createHumidityMeter(context),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  //   children: <Widget>[
-                  //     Card(
-                  //       color: Theme.of(context).scaffoldBackgroundColor,
-                  //       child: Padding(
-                  //         padding: const EdgeInsets.all(8.0),
-                  //         child: Text(
-                  //             'Low: ${weather.minTemp!.toStringAsFixed(2)} C'),
-                  //       ),
-                  //       shape: const RoundedRectangleBorder(
-                  //         side: BorderSide(
-                  //           color: Colors.lightBlue,
-                  //         ),
-                  //         borderRadius:
-                  //             BorderRadius.all(Radius.circular(4)),
-                  //       ),
-                  //     ),
-                  //     Card(
-                  //       color: Theme.of(context).scaffoldBackgroundColor,
-                  //       child: Padding(
-                  //         padding: const EdgeInsets.all(8.0),
-                  //         child: Text(
-                  //             'High: ${weather.maxTemp!.toStringAsFixed(2)} C'),
-                  //       ),
-                  //       shape: const RoundedRectangleBorder(
-                  //         side: BorderSide(
-                  //           color: Colors.red,
-                  //         ),
-                  //         borderRadius:
-                  //             BorderRadius.all(Radius.circular(4)),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
                 ],
               ),
             ),
