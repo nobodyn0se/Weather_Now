@@ -26,6 +26,8 @@ class WeatherWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 70,
                 child: RichText(
                   text: TextSpan(
                 style: Theme.of(context).textTheme.headline4,
